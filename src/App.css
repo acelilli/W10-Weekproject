@@ -16,7 +16,9 @@ body {
   size: 36px;
   color: #763f91;
 }
-
+.carousel {
+  border-radius: 55px 55px 55px 55px;
+}
 .App {
   text-align: center;
 }

@@ -40,7 +40,7 @@ const ExploreCity = () => {
             <Carousel.Item key={index}>
               <Link to={city.link}>
                 <img
-                  className="d-block w-100"
+                  className="d-block w-100 carousel"
                   style={{ height: "350px", objectFit: "cover", objectPosition: "50% 35%" }}
                   src={city.image}
                   alt={`${city.name} Carousel`}
