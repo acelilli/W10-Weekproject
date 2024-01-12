@@ -39,9 +39,12 @@ const ExploreCity = () => {
           {cities.map((city, index) => (
             <Carousel.Item key={index}>
               <Link to={city.link}>
-                <div style={{ height: "300px" }}>
-                  <img className="d-block w-100" src={city.image} alt={`${city.name} Carousel`} />
-                </div>
+                <img
+                  className="d-block w-100"
+                  style={{ height: "350px", objectFit: "cover", objectPosition: "50% 35%" }}
+                  src={city.image}
+                  alt={`${city.name} Carousel`}
+                />
 
                 <Carousel.Caption>
                   <h3>{city.name}</h3>
