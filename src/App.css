@@ -1,9 +1,8 @@
 /*FONT IMPORT POST RICERCA*/
 @import url("https://fonts.googleapis.com/css2?family=Righteous&display=swap");
 
-/* Custom CSS mio */
+/* Custom CSS */
 body {
-  background-color: #3578b3;
   color: #221f1f;
 }
 
@@ -11,6 +10,11 @@ body {
   color: gray;
   text-decoration: none;
   font-size: 0.8rem;
+}
+.city {
+  font-family: "Righteous", sans-serif;
+  size: 36px;
+  color: #763f91;
 }
 
 .App {

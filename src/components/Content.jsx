@@ -33,7 +33,7 @@ const Content = () => {
           );
           if (resp.ok) {
             let data = await resp.json();
-            console.log("SEARCHED CITY'S WEATHER ARRAY", data);
+            console.log("Searched city is:", data);
             setCityData(data);
             setGetSerch(true);
             setSelectedCityData(data[0]);
@@ -51,7 +51,7 @@ const Content = () => {
   return (
     <Container fluid className="px-3">
       {/* Row che contiene i tool*/}
-      <Row className="justify-content-center">
+      <Row className="justify-content-center align-items-center">
         {/* Col di WelcomeCard */}
         <Col md={4}>
           <WelcomeCard />
@@ -63,7 +63,7 @@ const Content = () => {
         </Col>
       </Row>
       <Row className="justify-content-center">
-        <Col md={12} className="me-4 ms-2">
+        <Col md={12}>
           {selectedCityData && (
             <>
               <CityCard apik={apik} cityData={selectedCityData} />
