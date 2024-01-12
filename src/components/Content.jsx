@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import { useState } from "react";
 import SearchCity from "./SearchCity";
 import WelcomeCard from "./WelcomeCard";
+import CityCard from "./CityCard";
 
 const Content = () => {
   // setto i valori iniziali:
@@ -14,23 +15,28 @@ const Content = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [cityData, setCityData] = useState([]);
   const [getSearch, setGetSerch] = useState(false);
+  // Stato che serve a passare il risultato della ricerca da componente figlio SearchCity a componetne figlio CityCard
+  //inizializzato a NULL
+  const [selectedCityData, setSelectedCityData] = useState(null);
 
   // const [imageUrl, setImageUrl] = useState({});
   // const [loadedPhoto, setLoadedPhoto] = useState(false);
+  const apik = "d2f0cb3825395c7de55d96f5e48979ac";
 
   useEffect(() => {
-    const fetchWeatherData = async () => {
+    const fetchCityData = async () => {
       try {
         if (searchQuery.trim() !== "") {
           // Se searchQuery non sia una stringa vuota allora:
           let resp = await fetch(
-            `https://api.openweathermap.org/geo/1.0/direct?q=${searchQuery}&limit=5&appid=d2f0cb3825395c7de55d96f5e48979ac`
+            `https://api.openweathermap.org/geo/1.0/direct?q=${searchQuery}&limit=5&appid=${apik}`
           );
           if (resp.ok) {
             let data = await resp.json();
             console.log("SEARCHED CITY'S WEATHER ARRAY", data);
             setCityData(data);
             setGetSerch(true);
+            setSelectedCityData(data[0]);
           } else {
             console.log("ERROR FETCHING");
           }
@@ -39,7 +45,7 @@ const Content = () => {
         console.log("CATCHED", error);
       }
     };
-    fetchWeatherData();
+    fetchCityData();
   }, [searchQuery]);
 
   return (
@@ -56,6 +62,16 @@ const Content = () => {
           {/* <City /> che è un component di Search City e fa apparire la grafica carina del luogo cercato. Appare una card o un elemento diviso in due o tre parti. Da un lato l'immagine della città, dagli altri due le info che mi da la API*/}
         </Col>
       </Row>
+      <Row className="justify-content-center">
+        <Col md={12} className="me-4 ms-2">
+          {selectedCityData && (
+            <>
+              <CityCard apik={apik} cityData={selectedCityData} />
+            </>
+          )}
+        </Col>
+      </Row>
+
       {/* <Explore/> 
         Dove inserisco un component carosello Dove però devo rifare la fetch dei dati MA ci metto le immagini di capitali (Washington, Ottawa, Roma, Londra, Parigi, Barcellona, Pechino, Tokyo, Seoul, Sydney)*/}
     </Container>
