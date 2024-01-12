@@ -22,10 +22,3 @@ function SearchCity({ searchQuery, setSearchQuery }) {
   );
 }
 export default SearchCity;
-
-//  <Row className="justify-content-center">
-//         <Col lg={8}>
-//           <p>City info</p>
-//            {searchData.length > 0 && <CardWeather latandlong={searchData[0]} />} */}
-//           </Col>
-//         </Row>

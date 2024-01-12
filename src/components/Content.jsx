@@ -7,12 +7,13 @@ import WelcomeCard from "./WelcomeCard";
 
 const Content = () => {
   // setto i valori iniziali:
-  const [searchQuery, setSearchQuery] = useState("");
-  // Valore iniziale della ricerca
-  const [weatherData, setWeatherData] = useState([]);
-  //Array vuoto dove vanno i dati meteo della ricerca
-  const [getSearch, setGetSerch] = useState(false);
+  //Valori iniziali per SEARCHCITY
+  // Valore iniziale della ricerca = stringa vuota
+  // Valore iniziale della città ricercata = Array vuoto
   // è stata effettuata una ricerca? Si/No (parto da no)
+  const [searchQuery, setSearchQuery] = useState("");
+  const [cityData, setCityData] = useState([]);
+  const [getSearch, setGetSerch] = useState(false);
 
   // const [imageUrl, setImageUrl] = useState({});
   // const [loadedPhoto, setLoadedPhoto] = useState(false);
@@ -28,7 +29,7 @@ const Content = () => {
           if (resp.ok) {
             let data = await resp.json();
             console.log("SEARCHED CITY'S WEATHER ARRAY", data);
-            setWeatherData(data);
+            setCityData(data);
             setGetSerch(true);
           } else {
             console.log("ERROR FETCHING");
@@ -44,14 +45,13 @@ const Content = () => {
   return (
     <Container fluid className="px-3">
       {/* Row che contiene i tool*/}
-      <Row>
+      <Row className="justify-content-center">
+        {/* Col di WelcomeCard */}
         <Col md={4}>
           <WelcomeCard />
-          {/* COL di WelcomeCard */}
-          {/* In una row/col in cui metto un altro elemento che mi mostra la data e tutte le altre info! Una card senza immagini che mi da il benvenuto nella page! Allineato al logo */}
         </Col>
         {/* COL DI SearchCity */}
-        <Col md={7} className="me-4 ms-0">
+        <Col md={7} className="me-4 ms-2">
           <SearchCity searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
           {/* <City /> che è un component di Search City e fa apparire la grafica carina del luogo cercato. Appare una card o un elemento diviso in due o tre parti. Da un lato l'immagine della città, dagli altri due le info che mi da la API*/}
         </Col>
