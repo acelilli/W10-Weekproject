@@ -1,7 +1,7 @@
 /*FONT IMPORT POST RICERCA*/
 @import url("https://fonts.googleapis.com/css2?family=Righteous&display=swap");
 
-/* Custom CSS */
+/* Custom CSS // da sistemare con sass ecc ma no time */
 body {
   color: #221f1f;
 }
@@ -16,9 +16,11 @@ body {
   size: 36px;
   color: #763f91;
 }
-.carousel {
-  border-radius: 55px 55px 55px 55px;
+
+p {
+  margin-bottom: 0.4rem;
 }
+
 .App {
   text-align: center;
 }

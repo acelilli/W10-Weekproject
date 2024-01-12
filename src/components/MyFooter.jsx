@@ -5,7 +5,7 @@ import { Facebook, Instagram, Twitter, Youtube } from "react-bootstrap-icons";
 const MyFooter = () => {
   return (
     <Container fluid>
-      <Row className="justify-content-center mt-5 bg-light footertext">
+      <Row className="justify-content-center mt-1 bg-light footertext">
         <Row className="mt-3">
           <Col md={4}>
             <div className="mb-2">
