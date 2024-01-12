@@ -34,7 +34,7 @@ const cities = [
 const ExploreCity = () => {
   return (
     <Row className="my-3 mx-4">
-      <Col sm={11}>
+      <Col sm={12}>
         <Carousel>
           {cities.map((city, index) => (
             <Carousel.Item key={index}>
