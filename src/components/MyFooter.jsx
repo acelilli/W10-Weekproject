@@ -49,7 +49,7 @@ const MyFooter = () => {
             </p>
             <p>
               <a href="#" alt="footer link" className="text-secondary">
-                Cookies Preferences
+                FAQ
               </a>
             </p>
           </Col>
