@@ -5,6 +5,7 @@ import { useState } from "react";
 import SearchCity from "./SearchCity";
 import WelcomeCard from "./WelcomeCard";
 import CityCard from "./CityCard";
+import ExploreCity from "./ExploreCity";
 
 const Content = () => {
   // setto i valori iniziali:
@@ -69,6 +70,15 @@ const Content = () => {
               <CityCard apik={apik} cityData={selectedCityData} />
             </>
           )}
+        </Col>
+      </Row>
+      <Row className="justify-content-center align-items-center">
+        <Col
+          sm={12}
+          className="
+        mx-3"
+        >
+          <ExploreCity />
         </Col>
       </Row>
 

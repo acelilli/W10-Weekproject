@@ -6,7 +6,7 @@ import Col from "react-bootstrap/Col";
 function WelcomeCard() {
   return (
     <Row className="justify-content-center">
-      <Col xs={12} className="mt-4 mx-0">
+      <Col xs={12} className="mt-4 mx-2">
         <Card className="mx-0">
           <Card.Body className="py-1">
             <Card.Title className="mb-0">Welcome</Card.Title>
